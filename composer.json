@@ -1,0 +1,25 @@
+{
+    "name": "postor/yii2-redis-filter",
+    "description": "ordering,paging,categorizing your items use via sorted set",
+    "type": "yii2-extension",
+    "keywords": ["yii2", "yii 2", "redis", "filter"],
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "LinYanjun",
+            "email": "postor@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/postor/yii2-redis-filter/issues?state=open",
+        "source": "https://github.com/postor/yii2-redis-filter"
+    },
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "postor\\redisfilter\\": ""
+        }
+    }
+}
