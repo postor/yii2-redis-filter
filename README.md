@@ -35,7 +35,7 @@ php composer.phar require --prefer-dist postor/yii2-redis-filter
 //set tags 设置标签
 $rf = \Yii::$app->redisfilter;
 $rf->setTag($a->id, 'base', $a->created_time); //all article sort by created_time 所有文章按时间排序
-$rf->setTag($a->id, 'grid'.$a->grid_id); //all article tag their location 所有文章按地区贴上标签
+$rf->setTag($a->id, 'samsung'); //all article tag into tag sets 所有文章按标签类型贴收入对应集合
 $rf->removeTag($b->id, 'base');
 
 //filter tags 筛选标签
@@ -44,7 +44,7 @@ $ids = $rf->getTagList(['seta','setb'=>'setc'],$offset,$pageSize); // seta|(setb
 //$ids  array(11) { [0]=> string(7) "1385584" [1]=> string(7) "1385585" [2]=> string(7) "1385586" [3]=> string(7) "1385587" [4]=> string(7) "1385588" [5]=> string(7) "1385589" [6]=> string(7) "1515910" [7]=> string(7) "1515911" [8]=> string(7) "1515912" [9]=> string(7) "1515913" [10]=> string(7) "1515914" }
 
 //by score 按分数
-$zsetname = $rf->getZset(['base'=>'grid'.$gridid]); // base&gridX
+$zsetname = $rf->getZset(['base'=>'samsung']); // base&samsung
 $total = $rf->getTagTotalByZset($zsetname);
 $ids = $rf->getTagListByScore($zsetname, time()-86400*3, time());
 
