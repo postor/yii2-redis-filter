@@ -46,5 +46,6 @@ $ids = $rf->getTagList(['seta','setb'=>'setc'],$offset,$pageSize); // seta|(setb
 $zsetname = $rf->getZset(['base'=>'grid'.$gridid]); // base&gridX
 $total = $rf->getTagTotalByZset($zsetname);
 $ids = $rf->getTagListByScore($zsetname, time()-86400*3, time());
+//$ids  array(11) { [0]=> string(7) "1385584" [1]=> string(7) "1385585" [2]=> string(7) "1385586" [3]=> string(7) "1385587" [4]=> string(7) "1385588" [5]=> string(7) "1385589" [6]=> string(7) "1515910" [7]=> string(7) "1515911" [8]=> string(7) "1515912" [9]=> string(7) "1515913" [10]=> string(7) "1515914" }
 
 ```
