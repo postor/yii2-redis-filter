@@ -4,7 +4,7 @@ ordering,paging,categorizing your items use via sorted set 利用redis的有序�
 ##install安装
 
 ```
-composer require postor/yii2-reids-filter
+php composer.phar require --prefer-dist postor/yii2-redis-filter
 ```
 
 ##config配置
