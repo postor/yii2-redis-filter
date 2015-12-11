@@ -39,13 +39,14 @@ $rf->setTag($a->id, 'grid'.$a->grid_id); //all article tag their location 所有
 $rf->removeTag($b->id, 'base');
 
 //filter tags 筛选标签
-//by page
+//by page 按分页
 $ids = $rf->getTagList(['seta','setb'=>'setc'],$offset,$pageSize); // seta|(setb&setc) 
+//$ids  array(11) { [0]=> string(7) "1385584" [1]=> string(7) "1385585" [2]=> string(7) "1385586" [3]=> string(7) "1385587" [4]=> string(7) "1385588" [5]=> string(7) "1385589" [6]=> string(7) "1515910" [7]=> string(7) "1515911" [8]=> string(7) "1515912" [9]=> string(7) "1515913" [10]=> string(7) "1515914" }
 
-//by score
+//by score 按分数
 $zsetname = $rf->getZset(['base'=>'grid'.$gridid]); // base&gridX
 $total = $rf->getTagTotalByZset($zsetname);
 $ids = $rf->getTagListByScore($zsetname, time()-86400*3, time());
-//$ids  array(11) { [0]=> string(7) "1385584" [1]=> string(7) "1385585" [2]=> string(7) "1385586" [3]=> string(7) "1385587" [4]=> string(7) "1385588" [5]=> string(7) "1385589" [6]=> string(7) "1515910" [7]=> string(7) "1515911" [8]=> string(7) "1515912" [9]=> string(7) "1515913" [10]=> string(7) "1515914" }
+
 
 ```
