@@ -130,7 +130,7 @@ class RedisFilter extends Component {
 		}else{
 			$rtnArr = [];
 			foreach ($tag as $key=>$value){
-				if(($key+0) === $key){
+				if(is_numeric($key)){
 					//数字下标
 					$valueZset = $this->getZset($value);
 					$rtnArr[] = $valueZset;

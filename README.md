@@ -1,13 +1,13 @@
 # yii2-redis-filter
 ordering,paging,categorizing your items use via sorted set 利用redis的有序集合实现排序、分页、分类
 
-##install安装
+## install安装
 
 ```
 php composer.phar require --prefer-dist postor/yii2-redis-filter
 ```
 
-##config配置
+## config配置
 
 ```
 'components' => [
@@ -24,7 +24,7 @@ php composer.phar require --prefer-dist postor/yii2-redis-filter
         ],
         ....
 ```
-##usage使用
+## usage使用
 \Yii::$app->redisfilter->getTagList($tag,$offset,$limit); $tag param： 
 - string, just the tag set 字符串就是对应的tag集合
 - array, deep loop each array and interstore key and value, then unionstore all element results. 数组情况则key与value取交集，然后所有数组元素取并集，可以嵌套
@@ -50,3 +50,20 @@ $ids = $rf->getTagListByScore($zsetname, time()-86400*3, time());
 
 
 ```
+
+
+## example
+
+```
+cd example
+
+# config your own redis
+vi config/web.php
+
+./yii serve
+
+```
+
+open localhost:8080 and try
+
+for details see codes: [example/models/NumberFilter.php](./example/models/NumberFilter.php)
