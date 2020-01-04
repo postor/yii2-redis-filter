@@ -1,6 +1,9 @@
 # yii2-redis-filter
 ordering,paging,categorizing your items use via sorted set 利用redis的有序集合实现排序、分页、分类
 
+quick glance: https://www.youtube.com/watch?v=zLYAlfSTUQE&list=PLM1v95K5B1ntVsYvNJIxgRPppngrO_X4s
+
+
 ## install安装
 
 ```
